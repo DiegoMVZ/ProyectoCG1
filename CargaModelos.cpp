@@ -42,6 +42,8 @@ Texture dirtTexture;
 Texture plainTexture;
 Texture pisoTexture;
 Texture puestoTortas;
+Texture pT;
+
 
 
 Model Kitt_M;
