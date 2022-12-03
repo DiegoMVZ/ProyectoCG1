@@ -49,6 +49,8 @@ Model Llanta_M;
 Model Camino_M;
 Model PuestoTortas1;
 Model PuestoTacos1;
+Model Fdhd;
+Model Fdpi;
 Model Dado_M;
 
 Skybox skybox;
@@ -153,17 +155,21 @@ int main()
 	PuestoTortas1.LoadModel("Models/PuestoTortas1.obj");
 	PuestoTacos1 = Model();
 	PuestoTacos1.LoadModel("Models/PuestoTacos1.obj");
+	Fdhd = Model();
+	Fdhd.LoadModel("Models/Foodthd.obj");
+	Fdpi = Model();
+	Fdpi.LoadModel("Models/Foodtpi.obj");
 	Camino_M = Model();
 	Camino_M.LoadModel("Models/railroad track.obj");
 
 
 	std::vector<std::string> skyboxFaces;
-	skyboxFaces.push_back("Textures/Skybox/cupertin-lake-night_rt.tga");
-	skyboxFaces.push_back("Textures/Skybox/cupertin-lake-night_lf.tga");
-	skyboxFaces.push_back("Textures/Skybox/cupertin-lake-night_dn.tga");
-	skyboxFaces.push_back("Textures/Skybox/cupertin-lake-night_up.tga");
-	skyboxFaces.push_back("Textures/Skybox/cupertin-lake-night_bk.tga");
-	skyboxFaces.push_back("Textures/Skybox/cupertin-lake-night_ft.tga");
+	skyboxFaces.push_back("Textures/Skybox/S2.tga");
+	skyboxFaces.push_back("Textures/Skybox/S2.tga");
+	skyboxFaces.push_back("Textures/Skybox/S2.tga");
+	skyboxFaces.push_back("Textures/Skybox/S2.tga");
+	skyboxFaces.push_back("Textures/Skybox/S2.tga");
+	skyboxFaces.push_back("Textures/Skybox/S2.tga");
 
 	skybox = Skybox(skyboxFaces);
 
@@ -221,11 +227,40 @@ int main()
 		//Kitt_M.RenderModel();
 
 		model = glm::mat4(1.0);
-		model = glm::translate(model, glm::vec3(0.0f, 3.0f, -1.0));
+		model = glm::translate(model, glm::vec3(-20.0f, 3.0f, -1.0));
 		model = glm::scale(model, glm::vec3(0.8f, 0.8f, 0.8f));
 		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f,1.0f, 0.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Fdhd.RenderModel();
+
+		//1
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(100.0f, 3.0f, -1.0));
+		model = glm::scale(model, glm::vec3(0.8f, 0.8f, 0.8f));
+		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		PuestoTacos1.RenderModel();
+
+		//2
+
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(200.0f, 3.0f, -1.0));
+		model = glm::scale(model, glm::vec3(0.8f, 0.8f, 0.8f));
+		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		PuestoTortas1.RenderModel();
+
+
+		//3
+
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(-100.0f, 3.0f, -1.0));
+		model = glm::scale(model, glm::vec3(0.8f, 0.8f, 0.8f));
+		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Fdpi.RenderModel();
+
+
 
 		model = glm::mat4(1.0);
 		model = glm::translate(model, glm::vec3(0.0f, -1.53f, 0.0f));
