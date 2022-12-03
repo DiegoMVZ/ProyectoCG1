@@ -41,12 +41,14 @@ Texture brickTexture;
 Texture dirtTexture;
 Texture plainTexture;
 Texture pisoTexture;
+Texture puestoTortas;
 
 
 Model Kitt_M;
 Model Llanta_M;
 Model Camino_M;
-Model Blackhawk_M;
+Model PuestoTortas1;
+Model PuestoTacos1;
 Model Dado_M;
 
 Skybox skybox;
@@ -138,26 +140,30 @@ int main()
 	dirtTexture.LoadTextureA();
 	plainTexture = Texture("Textures/plain.png");
 	plainTexture.LoadTextureA();
-	pisoTexture = Texture("Textures/piso.tga");
+	pisoTexture = Texture("Textures/pisoetga.tga");
 	pisoTexture.LoadTextureA();
+	puestoTortas = Texture("Textures/textpuestotortas.tga");
+	puestoTortas.LoadTextureA();
 
 	Kitt_M = Model();
 	Kitt_M.LoadModel("Models/kitt.3ds");
 	Llanta_M = Model();
 	Llanta_M.LoadModel("Models/k_rueda.3ds");
-	Blackhawk_M = Model();
-	Blackhawk_M.LoadModel("Models/uh60.obj");
+	PuestoTortas1 = Model();
+	PuestoTortas1.LoadModel("Models/PuestoTortas1.obj");
+	PuestoTacos1 = Model();
+	PuestoTacos1.LoadModel("Models/PuestoTacos1.obj");
 	Camino_M = Model();
 	Camino_M.LoadModel("Models/railroad track.obj");
 
 
 	std::vector<std::string> skyboxFaces;
-	skyboxFaces.push_back("Textures/Skybox/cupertin-lake_rt.tga");
-	skyboxFaces.push_back("Textures/Skybox/cupertin-lake_lf.tga");
-	skyboxFaces.push_back("Textures/Skybox/cupertin-lake_dn.tga");
-	skyboxFaces.push_back("Textures/Skybox/cupertin-lake_up.tga");
-	skyboxFaces.push_back("Textures/Skybox/cupertin-lake_bk.tga");
-	skyboxFaces.push_back("Textures/Skybox/cupertin-lake_ft.tga");
+	skyboxFaces.push_back("Textures/Skybox/cupertin-lake-night_rt.tga");
+	skyboxFaces.push_back("Textures/Skybox/cupertin-lake-night_lf.tga");
+	skyboxFaces.push_back("Textures/Skybox/cupertin-lake-night_dn.tga");
+	skyboxFaces.push_back("Textures/Skybox/cupertin-lake-night_up.tga");
+	skyboxFaces.push_back("Textures/Skybox/cupertin-lake-night_bk.tga");
+	skyboxFaces.push_back("Textures/Skybox/cupertin-lake-night_ft.tga");
 
 	skybox = Skybox(skyboxFaces);
 
@@ -210,21 +216,21 @@ int main()
 		model = glm::translate(model, glm::vec3(0.0f, 0.5f, -1.5f));
 		modelaux = model;
 		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
-		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		//model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
-		Kitt_M.RenderModel();
+		//Kitt_M.RenderModel();
 
 		model = glm::mat4(1.0);
 		model = glm::translate(model, glm::vec3(0.0f, 3.0f, -1.0));
-		model = glm::scale(model, glm::vec3(0.3f, 0.3f, 0.3f));
-		model = glm::rotate(model, -90 * toRadians, glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.8f, 0.8f, 0.8f));
+		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f,1.0f, 0.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
-		Blackhawk_M.RenderModel();
+		PuestoTortas1.RenderModel();
 
 		model = glm::mat4(1.0);
 		model = glm::translate(model, glm::vec3(0.0f, -1.53f, 0.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
-		Camino_M.RenderModel();
+		//Camino_M.RenderModel();
 
 
 		glUseProgram(0);
