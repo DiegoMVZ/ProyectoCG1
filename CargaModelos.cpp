@@ -1,7 +1,7 @@
 /*
 Semestre 2023-1
 Práctica 5: Optimización y Carga de Modelos
-*/
+*/////DIEGO
 //para cargar imagen
 #define STB_IMAGE_IMPLEMENTATION
 
@@ -53,6 +53,7 @@ Model PuestoTortas1;
 Model PuestoTacos1;
 Model Fdhd;
 Model Fdpi;
+Model Dongato;
 Model Dado_M;
 
 Skybox skybox;
@@ -161,6 +162,8 @@ int main()
 	Fdhd.LoadModel("Models/Foodthd.obj");
 	Fdpi = Model();
 	Fdpi.LoadModel("Models/Foodtpi.obj");
+	Dongato = Model();
+	Dongato.LoadModel("Models/Dongato.obj");
 	Camino_M = Model();
 	Camino_M.LoadModel("Models/railroad track.obj");
 
@@ -261,6 +264,15 @@ int main()
 		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Fdpi.RenderModel();
+
+		//4
+
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(-150.0f, 3.0f, -1.0));
+		model = glm::scale(model, glm::vec3(0.8f, 0.8f, 0.8f));
+		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Dongato.RenderModel();
 
 
 

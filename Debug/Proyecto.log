@@ -1,6 +1,6 @@
 ﻿  CargaModelos.cpp
 C:\Users\Adrian\Documents\DIEGO WORK\9no semestre\Lab. Computación Gráfica e interacción humano computadora\Prácticas\Proyecto\Proyecto\Window.h(12,36): warning C4244: 'return': conversión de 'GLint' a 'GLfloat'; posible pérdida de datos
 C:\Users\Adrian\Documents\DIEGO WORK\9no semestre\Lab. Computación Gráfica e interacción humano computadora\Prácticas\Proyecto\Proyecto\Window.h(13,37): warning C4244: 'return': conversión de 'GLint' a 'GLfloat'; posible pérdida de datos
-C:\Users\Adrian\Documents\DIEGO WORK\9no semestre\Lab. Computación Gráfica e interacción humano computadora\Prácticas\Proyecto\Proyecto\CargaModelos.cpp(183,15): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\Adrian\Documents\DIEGO WORK\9no semestre\Lab. Computación Gráfica e interacción humano computadora\Prácticas\Proyecto\Proyecto\CargaModelos.cpp(185,33): warning C4244: '+=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\Adrian\Documents\DIEGO WORK\9no semestre\Lab. Computación Gráfica e interacción humano computadora\Prácticas\Proyecto\Proyecto\CargaModelos.cpp(188,15): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\Adrian\Documents\DIEGO WORK\9no semestre\Lab. Computación Gráfica e interacción humano computadora\Prácticas\Proyecto\Proyecto\CargaModelos.cpp(190,33): warning C4244: '+=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
   Proyecto.vcxproj -> C:\Users\Adrian\Documents\DIEGO WORK\9no semestre\Lab. Computación Gráfica e interacción humano computadora\Prácticas\Proyecto\Debug\Proyecto.exe
